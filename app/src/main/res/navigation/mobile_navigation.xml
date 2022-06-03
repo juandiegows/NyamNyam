@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.appnyam.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.appnyam.ui.ui.main.OrdersFragment"
+        android:label="Orders"
+        tools:layout="@layout/fragment_orders">
+        <action
+            android:id="@+id/action_ordersFragment_to_ingredientsFragment"
+            app:destination="@id/ingredientsFragment" />
+        <action
+            android:id="@+id/action_ordersFragment_to_orderDishesFragment"
+            app:destination="@id/orderDishesFragment" />
+        <action
+            android:id="@+id/action_ordersFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/cookingFragment"
+        android:name="com.example.appnyam.ui.ui.main.CookingFragment"
+        android:label="fragment_cooking"
+        tools:layout="@layout/fragment_cooking" />
+    <fragment
+        android:id="@+id/ingredientsFragment"
+        android:name="com.example.appnyam.ui.ui.main.ingredientsFragment"
+        android:label="ingredients"
+        tools:layout="@layout/fragment_ingredients" />
+    <fragment
+        android:id="@+id/orderDishesFragment"
+        android:name="com.example.appnyam.ui.ui.main.OrderDishesFragment"
+        android:label="Order Dishes"
+        tools:layout="@layout/fragment_order_dishes">
+        <action
+            android:id="@+id/action_orderDishesFragment_to_cookingFragment"
+            app:destination="@id/cookingFragment" />
+    </fragment>
+</navigation>
